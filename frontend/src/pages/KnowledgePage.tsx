@@ -13,30 +13,49 @@ import GalvanicCellSimulation from '../components/simulations/GalvanicCellSimula
 import ChemicalEquilibriumSimulation from '../components/simulations/ChemicalEquilibriumSimulation'
 import TitrationSimulation from '../components/simulations/TitrationSimulation'
 import BenzeneSimulation from '../components/simulations/BenzeneSimulation'
+import MatterTypesSimulation from '../components/simulations/MatterTypesSimulation'
+import DispersionSystemSimulation from '../components/simulations/DispersionSystemSimulation'
+import RedoxReactionSimulation from '../components/simulations/RedoxReactionSimulation'
+import VSEPRSimulation from '../components/simulations/VSEPRSimulation'
+import HybridizationSimulation from '../components/simulations/HybridizationSimulation'
 import DefaultSimulation from '../components/simulations/DefaultSimulation'
 
 const simulationMap: Record<string, React.ComponentType> = {
+  // 物质分类
+  'matter-types': MatterTypesSimulation,
+  'dispersion-system': DispersionSystemSimulation,
+  // 化学反应
+  'ionic-reaction': IonicBondSimulation,
+  'redox-reaction': RedoxReactionSimulation,
+  // 原子结构
   'atom-structure': AtomStructureSimulation,
   'periodic-table': AtomStructureSimulation,
   'periodic-law': AtomStructureSimulation,
+  // 化学键
   'ionic-bond': IonicBondSimulation,
-  'ionic-reaction': IonicBondSimulation,
   'covalent-bond': CovalentBondSimulation,
   'metallic-bond': CovalentBondSimulation,
   'intermolecular-force': CovalentBondSimulation,
+  // 电化学
   'galvanic-cell': GalvanicCellSimulation,
   'electrolysis': GalvanicCellSimulation,
   'metal-corrosion': GalvanicCellSimulation,
+  // 反应速率与平衡
   'chemical-equilibrium': ChemicalEquilibriumSimulation,
   'reaction-rate-factors': ChemicalEquilibriumSimulation,
   'equilibrium-calculation': ChemicalEquilibriumSimulation,
+  // 溶液平衡
   'titration': TitrationSimulation,
   'water-ionization': TitrationSimulation,
   'salt-hydrolysis': TitrationSimulation,
+  // 有机化学
   'benzene': BenzeneSimulation,
   'alkane': BenzeneSimulation,
   'alkene': BenzeneSimulation,
   'alkyne': BenzeneSimulation,
+  // 分子结构
+  'vsepr': VSEPRSimulation,
+  'hybridization': HybridizationSimulation,
 }
 
 export default function KnowledgePage() {
